@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.link {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}

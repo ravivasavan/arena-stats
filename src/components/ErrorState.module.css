@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--space-md);
+}
+
+.message {
+  color: var(--color-private);
+  font-size: 0.95rem;
+  text-align: center;
+  max-width: 400px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.retry,
+.logout {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.retry:hover,
+.logout:hover {
+  background: var(--color-card-bg);
+}
