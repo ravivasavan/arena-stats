@@ -1,5 +1,5 @@
 .main {
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   padding: var(--space-xl) var(--space-lg);
   display: flex;
@@ -32,7 +32,7 @@
 
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: var(--space-md);
 }
 

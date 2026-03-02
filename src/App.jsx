@@ -4,6 +4,7 @@ import LoginScreen from './components/LoginScreen'
 import UserHeader from './components/UserHeader'
 import StatCard from './components/StatCard'
 import ChannelBreakdown from './components/ChannelBreakdown'
+import ChannelTimeline from './components/ChannelTimeline'
 import TopChannels from './components/TopChannels'
 import LoadingState from './components/LoadingState'
 import ErrorState from './components/ErrorState'
@@ -56,6 +57,7 @@ export default function App() {
       <div className={styles.statsGrid}>
         <StatCard value={stats.totalBlocks} label="Total blocks" />
         <StatCard value={stats.totalChannels} label="Channels" />
+        <StatCard value={stats.averageBlocksPerChannel} label="Avg / channel" />
         <StatCard value={stats.followerCount} label="Followers" />
         <StatCard value={stats.followingCount} label="Following" />
       </div>
@@ -64,6 +66,8 @@ export default function App() {
         channelsByVisibility={stats.channelsByVisibility}
         totalChannels={stats.totalChannels}
       />
+
+      <ChannelTimeline channelsByYear={stats.channelsByYear} />
 
       <div className={styles.columns}>
         <TopChannels

@@ -20,6 +20,11 @@ export default function UserHeader({ user }) {
         >
           are.na/{user.slug}
         </a>
+        {user.memberSince && (
+          <span className={styles.memberSince}>
+            Member since {user.memberSince} &middot; {user.accountAge}
+          </span>
+        )}
       </div>
     </header>
   )

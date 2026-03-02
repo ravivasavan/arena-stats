@@ -21,3 +21,10 @@
   font-size: 0.9rem;
   color: var(--color-muted);
 }
+
+.memberSince {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-top: 2px;
+}
