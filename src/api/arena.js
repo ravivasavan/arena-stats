@@ -1,4 +1,4 @@
-const BASE = '/api/arena/v3'
+const BASE = import.meta.env.PROD ? 'https://api.are.na/v3' : '/api/arena/v3'
 
 function headers(token) {
   return {

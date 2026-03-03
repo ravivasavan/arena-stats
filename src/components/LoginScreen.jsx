@@ -15,7 +15,8 @@ export default function LoginScreen({ onLogin }) {
     setError(null)
 
     try {
-      const res = await fetch('/api/arena/v3/me', {
+      const apiBase = import.meta.env.PROD ? 'https://api.are.na/v3' : '/api/arena/v3'
+      const res = await fetch(`${apiBase}/me`, {
         headers: { Authorization: `Bearer ${trimmed}` },
       })
       if (!res.ok) {
