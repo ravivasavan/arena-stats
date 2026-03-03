@@ -25,6 +25,20 @@ export default function UserHeader({ user }) {
             Member since {user.memberSince} &middot; {user.accountAge}
           </span>
         )}
+        {user.firstChannel && (
+          <span className={styles.memberSince}>
+            First channel:{' '}
+            <a
+              className={styles.link}
+              href={`https://www.are.na/${user.slug}/${user.firstChannel.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {user.firstChannel.title}
+            </a>{' '}
+            ({user.firstChannel.formattedDate})
+          </span>
+        )}
       </div>
     </header>
   )
