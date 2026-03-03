@@ -5,6 +5,7 @@ import UserHeader from './components/UserHeader'
 import StatCard from './components/StatCard'
 import ChannelBreakdown from './components/ChannelBreakdown'
 import ChannelTimeline from './components/ChannelTimeline'
+import ChannelInsights from './components/ChannelInsights'
 import TopChannels from './components/TopChannels'
 import LoadingState from './components/LoadingState'
 import ErrorState from './components/ErrorState'
@@ -68,6 +69,12 @@ export default function App() {
       />
 
       <ChannelTimeline channelsByYear={stats.channelsByYear} />
+
+      <ChannelInsights
+        channelsByBlockSize={stats.channelsByBlockSize}
+        idleChannels={stats.idleChannels}
+        userSlug={stats.user?.slug}
+      />
 
       <div className={styles.columns}>
         <TopChannels
