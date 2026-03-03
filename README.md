@@ -23,7 +23,7 @@ npm install
 npm run dev
 ```
 
-Open the app and enter your Are.na personal access token to log in. You can find your token at [are.na/settings/developer](https://www.are.na/settings/developer).
+Open the app and enter your Are.na personal access token to log in. You can find your token at [are.na/settings/personal-access-tokens](https://www.are.na/settings/personal-access-tokens).
 
 Your token is stored in `localStorage` and never leaves your browser (API calls are proxied through the Vite dev server).
 

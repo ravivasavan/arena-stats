@@ -58,12 +58,13 @@ export default function LoginScreen({ onLogin }) {
         <p className={styles.help}>
           Get your token at{' '}
           <a
-            href="https://dev.are.na/oauth/applications/new"
+            href="https://www.are.na/settings/personal-access-tokens"
             target="_blank"
             rel="noopener noreferrer"
           >
-            dev.are.na
+            are.na/settings/personal-access-tokens
           </a>
+          . Your token is stored only on your device (e.g. in this browser); we don&apos;t save it in any database.
         </p>
       </div>
     </div>
