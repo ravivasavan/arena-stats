@@ -35,18 +35,12 @@ export async function fetchAllChannels(userSlug, token) {
   const totalPages = first.meta.total_pages
 
   if (totalPages > 1) {
-    const remaining = []
     for (let page = 2; page <= totalPages; page++) {
-      remaining.push(
-        request(
-          `/users/${userSlug}/contents?type=Channel&per=100&page=${page}`,
-          token,
-        ),
+      const res = await request(
+        `/users/${userSlug}/contents?type=Channel&per=100&page=${page}`,
+        token,
       )
-    }
-    const pages = await Promise.all(remaining)
-    for (const page of pages) {
-      channels.push(...page.data)
+      channels.push(...res.data)
     }
   }
 

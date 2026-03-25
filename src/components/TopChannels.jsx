@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import styles from './TopChannels.module.css'
 
-export default function TopChannels({ channels, userSlug, title = 'Largest Channels' }) {
+export default memo(function TopChannels({ channels, userSlug, title = 'Largest Channels' }) {
   return (
     <section className={styles.section}>
       <h2 className={styles.title}>{title}</h2>
@@ -23,4 +24,4 @@ export default function TopChannels({ channels, userSlug, title = 'Largest Chann
       </ol>
     </section>
   )
-}
+})

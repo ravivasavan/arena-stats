@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import styles from './UserHeader.module.css'
 
-export default function UserHeader({ user }) {
+export default memo(function UserHeader({ user }) {
   return (
     <header className={styles.header}>
       {user.avatar && (
@@ -42,4 +43,4 @@ export default function UserHeader({ user }) {
       </div>
     </header>
   )
-}
+})

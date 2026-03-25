@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styles from './ChannelInsights.module.css'
 
 const BLOCK_SIZE_LABELS = {
@@ -8,7 +9,7 @@ const BLOCK_SIZE_LABELS = {
   '101+': '101+',
 }
 
-export default function ChannelInsights({
+export default memo(function ChannelInsights({
   channelsByBlockSize,
   idleChannels,
   userSlug,
@@ -58,4 +59,4 @@ export default function ChannelInsights({
       </section>
     </div>
   )
-}
+})

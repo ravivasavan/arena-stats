@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import styles from './ChannelTimeline.module.css'
 
-export default function ChannelTimeline({ channelsByYear }) {
+export default memo(function ChannelTimeline({ channelsByYear }) {
   const years = Object.keys(channelsByYear).sort()
   const max = Math.max(...Object.values(channelsByYear))
 
@@ -29,4 +30,4 @@ export default function ChannelTimeline({ channelsByYear }) {
       </div>
     </div>
   )
-}
+})

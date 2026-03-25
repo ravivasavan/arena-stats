@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import styles from './ChannelBreakdown.module.css'
 
-export default function ChannelBreakdown({ channelsByVisibility, totalChannels }) {
+export default memo(function ChannelBreakdown({ channelsByVisibility, totalChannels }) {
   const segments = [
     { key: 'public', label: 'Public', count: channelsByVisibility.public, color: 'var(--color-public)' },
     { key: 'closed', label: 'Closed', count: channelsByVisibility.closed, color: 'var(--color-closed)' },
@@ -44,4 +45,4 @@ export default function ChannelBreakdown({ channelsByVisibility, totalChannels }
       </div>
     </section>
   )
-}
+})

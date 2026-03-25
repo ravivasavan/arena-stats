@@ -80,10 +80,8 @@ export function computeStats(user, channels, blockCount) {
   const channelsByBlockSize = { ...buckets }
 
   const now = new Date()
-  const sixMonthsMs = 6 * 30 * 24 * 60 * 60 * 1000
-  const oneYearMs = 12 * 30 * 24 * 60 * 60 * 1000
-  const sixMonthsAgo = new Date(now.getTime() - sixMonthsMs)
-  const oneYearAgo = new Date(now.getTime() - oneYearMs)
+  const sixMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 6, now.getDate())
+  const oneYearAgo = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate())
   let over6Months = 0
   let over1Year = 0
   for (const ch of channels) {
@@ -115,7 +113,6 @@ export function computeStats(user, channels, blockCount) {
     mostRecentChannels,
     averageBlocksPerChannel:
       totalChannels > 0 ? Math.round(blockCount / totalChannels) : 0,
-    firstChannel,
     channelsByBlockSize,
     idleChannels,
   }
