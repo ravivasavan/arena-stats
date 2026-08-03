@@ -11,17 +11,19 @@
   transition: flex-grow 0.35s ease;
 }
 
+/* Flow the legend as compact chips — a stretched grid leaves a canyon between
+   each label and its value. */
 .legend {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--space-xs) var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-lg);
   margin-top: var(--space-md);
 }
 
 .item {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 6px;
   font-size: 0.82rem;
   min-width: 0;
 }
@@ -41,7 +43,6 @@
 }
 
 .value {
-  margin-left: auto;
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;

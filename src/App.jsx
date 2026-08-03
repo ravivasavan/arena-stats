@@ -15,7 +15,6 @@ import MilestonesPanel from './components/MilestonesPanel'
 import StoragePanel from './components/StoragePanel'
 import ChannelsPanel from './components/ChannelsPanel'
 import PeoplePanel from './components/PeoplePanel'
-import ActivityFeed from './components/ActivityFeed'
 import ChannelList from './components/ChannelList'
 import BlockList from './components/BlockList'
 import LoadingState from './components/LoadingState'
@@ -139,8 +138,6 @@ export default function App() {
       <StoragePanel blocks={blocks} />
 
       <PeoplePanel user={user} channels={channels} social={social} />
-
-      {social?.feed && <ActivityFeed feed={social.feed} />}
 
       <footer className={styles.footer}>
         Data from the{' '}

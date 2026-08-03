@@ -18,9 +18,8 @@ The live spec is at `https://api.are.na/v3/openapi.json` (41 paths). The ones wo
 | `GET /v3/users/:id/following?type=User\|Channel\|Group` | Following split by type (one `per=1` request each reads the count from `meta`) |
 | `GET /v3/users/:id/followers` | Follower count and the newest followers |
 | `GET /v3/users/:id/groups` | Groups you belong to |
-| `GET /v3/me/feed` | Network activity, cursor-paginated, typed by `ActivityKind` |
 
-Deliberately not used: `/v3/search` (premium only), `/v3/blocks/:id/connections` (one request per block — far too many), `/v3/me/notifications` (not a stat).
+Deliberately not used: `/v3/search` (premium only), `/v3/blocks/:id/connections` (one request per block — far too many), `/v3/me/notifications` (not a stat), `/v3/me/feed` (built it, then cut it — other people's activity isn't a stat about *your* account).
 
 Sorting on user contents accepts `created_at_asc|desc`, `updated_at_asc|desc`; `per` maxes out at 100.
 
@@ -57,7 +56,7 @@ Four things the naive version gets wrong, all corrected here:
 
 Shared primitives in `src/components/ui/`: `Section` (card + heading + note + actions, plus `Facts`/`Fact`/`Subheading`/`Empty`), `Bars` (horizontal, optionally stacked), `Columns` (vertical, dense series), `StackedBar` (proportional + legend).
 
-Panels, in page order: stat cards → `CreationTimeline` (by year, blocks/channels toggle) → `ActivityHeatmap` → `PacePanel` → `BlockComposition` → `RhythmPanel` → `SourcesPanel` → `ChannelsPanel` → channel/block lists → `MilestonesPanel` → `StoragePanel` → `PeoplePanel` → `ActivityFeed`.
+Panels, in page order: stat cards → `CreationTimeline` (by year, blocks/channels toggle) → `ActivityHeatmap` → `PacePanel` → `BlockComposition` → `RhythmPanel` → `SourcesPanel` → `ChannelsPanel` → channel/block lists → `MilestonesPanel` → `StoragePanel` → `PeoplePanel`.
 
 Every panel handles three states: no data yet (blocks still streaming), empty (account has none), and loaded. Colours are all CSS custom properties, so a `prefers-color-scheme: dark` block re-themes the whole app.
 
@@ -66,4 +65,3 @@ Every panel handles three states: no data yet (blocks still streaming), empty (a
 - Blocks not yet loaded: the year chart falls back to channels; block panels render an empty state rather than crashing.
 - Truncated block fetch: stat cards show the true total with an "N analysed" hint, and the footer says so.
 - Social endpoints failing (permissions, feed unavailable): each resolves to `null` and its panel degrades.
-- Unknown future `ActivityKind` values: the feed falls back to the raw kind with underscores stripped.

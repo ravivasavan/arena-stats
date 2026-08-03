@@ -4,7 +4,6 @@ import {
   fetchAllBlocks,
   fetchAllChannels,
   fetchBlockCount,
-  fetchFeed,
   fetchFollowingBreakdown,
   fetchGroups,
   fetchRecentFollowers,
@@ -142,13 +141,12 @@ export function useArenaStats(token) {
       } else {
         setProgress({ stage: 'social' })
         const settle = (promise) => promise.then((value) => value, () => null)
-        const [following, groups, followers, feed] = await Promise.all([
+        const [following, groups, followers] = await Promise.all([
           settle(fetchFollowingBreakdown(user.slug, token, signal)),
           settle(fetchGroups(user.slug, token, signal)),
           settle(fetchRecentFollowers(user.slug, token, signal)),
-          settle(fetchFeed(token, signal)),
         ])
-        social = { following, groups, followers, feed }
+        social = { following, groups, followers }
         writeCache('social', user.id, social)
       }
       publish()

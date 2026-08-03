@@ -245,32 +245,3 @@ export async function fetchGroups(userSlug, token, signal) {
   }))
 }
 
-function trimSubject(subject) {
-  if (!subject) return null
-  return {
-    id: subject.id,
-    type: subject.type,
-    title: subject.title || subject.name || null,
-    slug: subject.slug || null,
-    owner: subject.owner?.slug || subject.user?.slug || null,
-  }
-}
-
-export async function fetchFeed(token, signal) {
-  const res = await request('/me/feed?limit=60', token, { signal })
-  return (res.data ?? []).map((activity) => ({
-    id: activity.id,
-    kind: activity.kind,
-    createdAt: activity.created_at,
-    actor: activity.actor
-      ? {
-          name: activity.actor.name,
-          slug: activity.actor.slug,
-          avatar: activity.actor.avatar || null,
-          initials: activity.actor.initials || null,
-        }
-      : null,
-    item: trimSubject(activity.item),
-    target: trimSubject(activity.target),
-  }))
-}

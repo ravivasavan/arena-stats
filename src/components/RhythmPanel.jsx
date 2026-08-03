@@ -61,9 +61,9 @@ export default memo(function RhythmPanel({ blocks }) {
           <Subheading>Day of week</Subheading>
           <Bars items={weekdays} labelWidth="3.5ch" />
         </div>
-        <div>
+        <div className={styles.hours}>
           <Subheading>Hour of day (your local time)</Subheading>
-          <Columns items={hours} height={80} color="var(--chart-5)" />
+          <Columns items={hours} fill color="var(--chart-5)" />
         </div>
       </div>
     </Section>

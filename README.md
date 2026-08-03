@@ -4,7 +4,12 @@ A personal dashboard for your [Are.na](https://www.are.na) account. Everything t
 
 Built with React + Vite. Uses the [Are.na v3 API](https://api.are.na/v3/openapi).
 
-![Dashboard screenshot](screenshots/dashboard.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/dashboard-dark.png">
+  <img alt="Arena Stats dashboard" src="screenshots/dashboard.png">
+</picture>
+
+<sub>The whole page: [light](screenshots/dashboard-full.png) · [dark](screenshots/dashboard-full-dark.png)</sub>
 
 ## What it shows
 
@@ -31,7 +36,6 @@ Built with React + Vite. Uses the [Are.na v3 API](https://api.are.na/v3/openapi)
 - Followers, following broken down into people / channels / groups, and your follower ratio
 - Your most frequent channel collaborators
 - Groups you belong to, and your newest followers
-- Recent activity from your network
 
 **Milestones** — joined, first channel, first block, longest-running channel, newest channel, most recent block, on one timeline.
 
