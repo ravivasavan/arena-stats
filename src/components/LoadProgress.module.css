@@ -1,0 +1,61 @@
+.wrapper {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-card-bg);
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: 6px;
+}
+
+.label {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.detail {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.72rem;
+  color: var(--color-faint);
+}
+
+.track {
+  height: 3px;
+  background: var(--color-track);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: var(--chart-1);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.indeterminate {
+  height: 100%;
+  width: 30%;
+  background: var(--chart-1);
+  border-radius: 2px;
+  animation: slide 1.2s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(333%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indeterminate {
+    animation: none;
+    width: 100%;
+    opacity: 0.4;
+  }
+}

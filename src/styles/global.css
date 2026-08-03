@@ -10,11 +10,28 @@
   --color-bg: #ffffff;
   --color-text: #333333;
   --color-muted: #999999;
+  --color-faint: #bbbbbb;
   --color-border: #e5e5e5;
   --color-card-bg: #fafafa;
+  --color-track: #ececec;
+
   --color-public: #5b9a4e;
   --color-closed: #c4a43c;
   --color-private: #c44a4a;
+
+  /* Block types, in the order Are.na lists them. */
+  --chart-1: #4a7fb5;
+  --chart-2: #5b9a4e;
+  --chart-3: #c4a43c;
+  --chart-4: #b5674a;
+  --chart-5: #8a6bb0;
+
+  --heat-0: #ededed;
+  --heat-1: #cfe0c9;
+  --heat-2: #a3c797;
+  --heat-3: #74ab66;
+  --heat-4: #45803a;
+
   --radius: 8px;
   --space-xs: 4px;
   --space-sm: 8px;
@@ -23,6 +40,34 @@
   --space-xl: 48px;
   --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'SF Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #131313;
+    --color-text: #e6e6e6;
+    --color-muted: #8a8a8a;
+    --color-faint: #5f5f5f;
+    --color-border: #2a2a2a;
+    --color-card-bg: #191919;
+    --color-track: #262626;
+
+    --color-public: #6bb35c;
+    --color-closed: #d4b44c;
+    --color-private: #d45f5f;
+
+    --chart-1: #5b93cc;
+    --chart-2: #6bb35c;
+    --chart-3: #d4b44c;
+    --chart-4: #c97a5b;
+    --chart-5: #9d80c4;
+
+    --heat-0: #232323;
+    --heat-1: #2c4429;
+    --heat-2: #3d6339;
+    --heat-3: #55884d;
+    --heat-4: #74ab66;
+  }
 }
 
 html {

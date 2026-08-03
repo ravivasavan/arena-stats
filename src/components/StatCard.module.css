@@ -2,22 +2,29 @@
   background: var(--color-card-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 2px;
+  min-width: 0;
 }
 
 .value {
   font-family: var(--font-mono);
-  font-size: 2rem;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.75rem;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .label {
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   color: var(--color-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.hint {
+  font-size: 0.72rem;
+  color: var(--color-faint);
 }

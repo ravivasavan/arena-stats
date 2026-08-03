@@ -1,0 +1,91 @@
+.years {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.year:hover {
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.yearActive {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.scroller {
+  overflow-x: auto;
+  padding-bottom: var(--space-xs);
+}
+
+.grid {
+  min-width: 640px;
+}
+
+.months {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 3px;
+  height: 12px;
+}
+
+.month {
+  flex: 1;
+  min-width: 9px;
+  font-size: 0.62rem;
+  font-family: var(--font-mono);
+  color: var(--color-faint);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.cells {
+  display: flex;
+  gap: 2px;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 9px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: var(--heat-0);
+}
+
+.outside {
+  background: transparent;
+}
+
+.scale {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: var(--space-md);
+  font-size: 0.7rem;
+  color: var(--color-faint);
+}
+
+.scale .cell {
+  width: 10px;
+  height: 10px;
+  aspect-ratio: auto;
+}
