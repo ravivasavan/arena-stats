@@ -28,7 +28,7 @@
 }
 
 .tag {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.6rem;
   font-weight: 500;
   text-transform: uppercase;

@@ -15,6 +15,7 @@
 }
 
 .title {
+  font-family: var(--font-label);
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -34,6 +35,7 @@
 }
 
 .subheading {
+  font-family: var(--font-label);
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -56,6 +58,7 @@
 }
 
 .factLabel {
+  font-family: var(--font-label);
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;

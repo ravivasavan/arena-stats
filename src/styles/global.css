@@ -1,3 +1,57 @@
+/* ABC Areal (Dinamo). One variable superfamily file carries the whole
+   proportional → mono spectrum on its MONO axis, plus a DRKM axis tuned
+   for light-on-dark. Three families below all point at the same URL, so
+   the browser downloads it once. */
+@font-face {
+  font-family: 'ABC Areal';
+  src: url('../assets/fonts/ABCArealSuperfamilyVariable.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+  font-variation-settings: 'MONO' 0;
+}
+
+@font-face {
+  font-family: 'ABC Areal Semi Mono';
+  src: url('../assets/fonts/ABCArealSuperfamilyVariable.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+  font-variation-settings: 'MONO' 50;
+}
+
+@font-face {
+  font-family: 'ABC Areal Mono';
+  src: url('../assets/fonts/ABCArealSuperfamilyVariable.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+  font-variation-settings: 'MONO' 100;
+}
+
+@media (prefers-color-scheme: dark) {
+  @font-face {
+    font-family: 'ABC Areal';
+    src: url('../assets/fonts/ABCArealSuperfamilyVariable.woff2') format('woff2');
+    font-weight: 400 700;
+    font-display: swap;
+    font-variation-settings: 'MONO' 0, 'DRKM' 1;
+  }
+
+  @font-face {
+    font-family: 'ABC Areal Semi Mono';
+    src: url('../assets/fonts/ABCArealSuperfamilyVariable.woff2') format('woff2');
+    font-weight: 400 700;
+    font-display: swap;
+    font-variation-settings: 'MONO' 50, 'DRKM' 1;
+  }
+
+  @font-face {
+    font-family: 'ABC Areal Mono';
+    src: url('../assets/fonts/ABCArealSuperfamilyVariable.woff2') format('woff2');
+    font-weight: 400 700;
+    font-display: swap;
+    font-variation-settings: 'MONO' 100, 'DRKM' 1;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -38,8 +92,10 @@
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 48px;
-  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'SF Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  /* Areal for prose, Semi Mono for uppercase labels, Mono for data. */
+  --font-sans: 'ABC Areal', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-label: 'ABC Areal Semi Mono', 'ABC Areal', system-ui, sans-serif;
+  --font-mono: 'ABC Areal Mono', 'SF Mono', ui-monospace, 'Cascadia Code', monospace;
 }
 
 @media (prefers-color-scheme: dark) {

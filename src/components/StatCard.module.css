@@ -19,6 +19,7 @@
 }
 
 .label {
+  font-family: var(--font-label);
   font-size: 0.72rem;
   color: var(--color-muted);
   text-transform: uppercase;
